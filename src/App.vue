@@ -36,7 +36,9 @@ function imgImport(party: string) {
     <section class="max-layout">
       <article v-for="(party, index) in parties" :key="`party-index-${index}-${party}`" class="party">
         <div class="party__img-cont">
-          <p v-if="index === 'nulo' || index === 'blanco'" class="party__img party__count"> {{ index }}</p>
+          <p v-if="index === 'nulo' || index === 'blanco'" class="party__img party__count">
+            {{ index }}
+          </p>
           <img v-else :alt="index" :src="imgImport(index)" class="party__img" :class="`party__img--${index}`">
         </div>
         <div class="party__input">
@@ -47,7 +49,7 @@ function imgImport(party: string) {
             <Button @click="add(index)">
               <span>+</span>
             </Button>
-            <Button @click="remove(index)">
+            <Button :disabled="party === 0" @click="remove(index)">
               <span>-</span>
             </Button>
           </div>
