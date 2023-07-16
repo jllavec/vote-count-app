@@ -1,0 +1,108 @@
+@import 'normalize';
+@import 'layout';
+@import 'typography';
+
+main {
+  width: 100vw;
+}
+
+header {
+  background-color: $primary-red;
+}
+
+.party {
+  padding: 20px 0;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+    
+  @include min-width(large) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    max-height: 100px;
+    max-width: 100px;
+
+    @include min-width(medium) {
+      max-width: 120px;
+    }
+
+    @include min-width(large) {
+      max-width: 200px;
+    }
+
+    &--sumar, &--psoe {
+      max-width: 150px;
+
+      @include min-width(medium) {
+        max-width: 160px;
+      }
+  
+      @include min-width(large) {
+        max-width: 200px;
+      }
+    }
+
+    &-cont {
+      width: 100%;
+      margin-right: 16px;
+      max-width: 130px;
+
+      @include min-width(medium) {
+        max-width: 150px;
+      }
+  
+      @include min-width(large) {
+        max-width: 200px;
+      }
+    }
+  }
+
+  &__input {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+
+    @include min-width(large) {
+      flex-direction: row;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+
+    button {
+      background-color: $white;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      height: 56px;
+      width: 56px;
+
+      font-size: 48px;
+      border-radius: 0;
+      border: 2px solid $black;
+
+      &:first-child {
+        margin-right: 8px;
+      }
+
+      &:hover, &:active, &:focus {
+        background-color: $primary-red;
+      }
+    }
+  }
+
+  &__count {
+    margin: 0;
+    font-size: 56px;
+    line-height: 64px;
+  }
+}

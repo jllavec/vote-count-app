@@ -1,0 +1,24 @@
+.max-layout {
+  margin: 0 auto;
+  max-width: 300px;
+
+  @include min-width(xsmall) {
+    max-width: 320px;  
+  }
+
+  @include min-width(small) {
+    max-width: 500px;  
+  }
+
+  @include min-width(medium) {
+    max-width: 700px;  
+  }
+
+  @include min-width(large) {
+    max-width: 768px;  
+  }
+
+  @include min-width(extra-large) {
+    max-width: 1200px;  
+  }
+}
